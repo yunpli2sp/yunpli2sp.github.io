@@ -1,0 +1,48 @@
+#dependence packages : "glmnet","ProDenICA","showtext"
+library(glmnet)
+library(ProDenICA)
+library(showtext)
+source("./code/NPMLE_BSP.R")
+source("./code/NPMLE_BGK.R")
+source("./code/djordan2.R")
+
+showtext_auto(enable = TRUE)
+font_add('SimSun', 'simsun.ttc')
+dist2<-c('a','c','e','f')
+N=1024
+opar<-par(no.readonly = TRUE)
+par(family='STXihei')
+
+par(pin=c(2,2), mai=c(.3,.2, .3, .2),mfrow=c(2,2),xpd=TRUE)
+x <-  array(0,dim=c(4,3000))
+pdf <- array(0,dim=c(4,3000))
+data <- array(0,dim=c(4,N))
+
+for(i in 1:4){
+  x[i,] <- seq(length=3000,from=-6,to=6)
+  pdf[i,] <- djordan2(dist2[i],x[i,])
+  data[i,] <- rjordan(dist2[i],n=N)
+}
+
+for(j in 1:10){
+
+for(i in 1:4){
+
+
+ #smooth spline
+ fit<-NPMLE_BSP(x=data[i,],df=3,M=j,density.return=TRUE)$density
+ 
+ #Gaussian kernel
+ #fit<-NPMLE_BGK(x=data[i,],df=3,M=j,density.return=TRUE)$density
+ y_max = max(max(fit$y),max(pdf[i,]))
+ plot(x[i,],pdf[i,],type = "l",lwd=1,lty=1,col="red",xlab = "",ylab="", ylim= c(0,1.1*y_max),xaxt="n",yaxt="n")
+ rug(data)
+ lines(fit$x,fit$y,type = "l",lwd=1,lty=2,col="blue")
+ legend("topright", lty=c(1,1),lwd=c(1,1),legend=c("true",paste("boosting iterations M= ",j)),
+        col=c("red","blue"),bty = "n",xpd=TRUE)
+ Sys.sleep(0.2)  
+}
+    
+}
+      
+par(opar) 

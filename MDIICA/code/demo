@@ -1,0 +1,11 @@
+#dependence packages : "glmnet","ProDenICA","showtext","JADE"
+library(glmnet)
+library(ProDenICA)
+library(showtext)
+library(JADE)
+source("./code/Gmdi.R")
+source("./code/twoDimExp.R")
+source("./code/highDimExp.R")
+source("./code/NPMLE_BSP.R")
+
+

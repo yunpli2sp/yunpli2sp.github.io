@@ -1,0 +1,34 @@
+# jemdoc: menu{MENU}{index.html}, nofooter  
+==YunPeng Li 李云鹏
+
+~~~
+{}{img_left}{photo.jpg}{alt text}{131}{160}{}
+PhD student \n Signal and Information Processing Laboratory (ISI), \n D-ITET ETH Zurich \n
+ETF D 107\n
+Zurich, 8092, Switzerland \n 
+Tel: \+41 44 632 76 04 \n
+E-post: /yunpli/\[@\]isi\[DOT\] ee\[DOT\] ethz\[DOT\] ch
+
+~~~
+
+== About me
+I received the master degree from the department of Automation in Tsinghua University in 2021, and the B.S. degree in automation from Nanjing University of Aeronautics and Astronautics in 2015. Before the start of my 
+master study, I worked as an electrical engineer & control engineer in a port company for almost 3 years, where I was involved in several interesting projects cocerning programmable ligit controller (PLC) and embedded system.
+Since the beginning of May 2022, I am now luckily puring my PhD degree under the supervisior of Prof. Hans-Andrea Loeliger
+
+
+
+== Research
+My research interests include 
+- statistical signal processing (blind source separation, nonparametric estimation)
+- machine learning (independent component analysis, boosting)
+- the application of embedded system, FPGA, and SoC in machine learning
+- bayseian data analysis ...
+
+
+=== Recent Publications
+. YunPeng Li, ZhaoHui Ye, \"Boosting in Univariate Nonparametric Maximum Likelihood Estimation\", in IEEE Signal Processing Letters, vol. 28, pp. 623-627, 2021, doi: 10.1109/LSP.2021.3065881.
+
+[publications.html Full list of publications].
+\n
+[cv.pdf A brief cv].
